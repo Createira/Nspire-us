@@ -493,12 +493,14 @@ h1,h2,h3,h4,h5,h6,p {
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   max-width: 400px;
+   width: 400px;
    height: 210px;   
    margin-bottom: 40px;
    padding: 65px 61px 64px  62px;
 
    border-radius: 20px;
+
+   transition: all .3s linear;
 }
 
 .programs__item--yellow {
@@ -519,11 +521,31 @@ h1,h2,h3,h4,h5,h6,p {
    text-decoration: none;
    color: var(--white);
 
-   transition: transform .2s linear;
+   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-.item__link:hover {
-   transform: translateX(10px)
+.programs__item:hover {
+   border-top-left-radius: 10px;
+   border-bottom-left-radius: 10px;
+   animation-name: example;
+   animation-duration: 0.25s;
+   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.26);
+}
+
+.programs__item--yellow:hover {
+   border-top: 15px solid #c5a100;
+}
+
+.programs__item--blue:hover {
+   border-top: 15px solid #003b99;
+}
+
+.programs__item--red:hover {
+   border-top: 15px solid #770206;
+}
+
+.programs__item:hover .item__link {
+   transform: translateX(20px);
 }
 
 .decor-6 {
@@ -654,9 +676,20 @@ h1,h2,h3,h4,h5,h6,p {
    flex-wrap: wrap;
 }
 
-.social__icon {
+.social__link {
    margin-bottom: 20px;
    margin-right: 20px;
+}
+
+.social__icon {
+   border-radius: 50%;
+   
+   transition: transform .2s linear;
+}
+
+.social__icon:hover {
+   transform: translateY(7px);
+   box-shadow: 0px 0px 15px rgba(249, 184, 7, 0.424);
 }
 
 .donate {
